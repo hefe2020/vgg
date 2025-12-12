@@ -1,7 +1,7 @@
 import torch
 from torchvision import transforms
 import json
-from PIL import image
+from PIL import Image
 from .model import TinyVGGSample
 
 def load_model(model_path, class_to_idx_path):
