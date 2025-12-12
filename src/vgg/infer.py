@@ -8,7 +8,7 @@ def load_model(model_path, class_to_idx_path):
   class_idx = json.load(open(class_to_idx_path))
   num_class = len(class_idx)
   model = TinyVGGSample(input=3, hidden=20, output=num_class)
-  model.torch.load_state_dict(torch.load(model_path, map_location='cpu'))
+  model.load_state_dict(torch.load(model_path, map_location='cpu'))
   model.eval()
   return model, class_idx
 
