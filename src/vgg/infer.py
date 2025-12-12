@@ -13,8 +13,12 @@ def load_model(model_path, class_to_idx_path):
   return model, class_idx
 
 transform = transforms.Compose([
-  transforms.Resize((32, 32)),
-  transforms.ToTensor()
+    transforms.Resize((32, 32)),
+    transforms.ToTensor(),
+    transforms.Normalize(
+        mean=[0.4914, 0.4822, 0.4465],
+        std=[0.2470, 0.2435, 0.2616]
+    )
 ])
 
 def predict(model, img_path, class_idx):
