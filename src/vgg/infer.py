@@ -24,6 +24,6 @@ def predict(model, img_path, class_idx):
     preds = model(x)
     prob = preds.softmax(dim=1)[0]
     top = prob.argmax().item()
-  inv_idx = {v: k for k: v in class_idx.items()}
+  inv_idx = {v: k for k, v in class_idx.items()}
   return inv_idx[top], prob[top].item()
 
