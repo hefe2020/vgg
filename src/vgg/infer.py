@@ -12,7 +12,7 @@ def load_model(model_path, class_to_idx_path):
   model.eval()
   return model, class_idx
 
-transform = transforms.compose([
+transform = transforms.Compose([
   transforms.Resize((32, 32)),
   transforms.ToTensor()
 ])
